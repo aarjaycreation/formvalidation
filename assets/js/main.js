@@ -1,54 +1,102 @@
-let form = document.getElementById("taskForm");
-let FirstName = document.getElementById("FirstName");
-let LastName = document.getElementById("LastName");
-let Email = document.getElementById("Email");
-let PhoneNumber = document.getElementById("PhoneNumber");
-let Qualification = document.getElementById("Qualification");
+let form = document.getElementById('taskForm');
+let FirstName = document.getElementById('FirstName');
+let LastName = document.getElementById('LastName');
+let Email = document.getElementById('Email');
+let PhoneNumber = document.getElementById('PhoneNumber');
+let Qualification = document.getElementById('Qualification');
 let Gender = document.querySelector('input[name = gender]:checked');
-let Hobbies = document.querySelector('.messageCheckbox').checked;
-let Comment = document.getElementById("Comment");
-// let demo = document.getElementById("demo");
-// let demo = document.getElementById("demo");
-// let demo = document.getElementById("demo");
-// let demo = document.getElementById("demo");
-// let demo = document.getElementById("demo");
-// let demo = document.getElementById("demo");
-console.log(Hobbies)
-document
-  .querySelector("form#taskForm")
+let checkboxes = document.getElementsByName('hobbies');
+let result = "";
+let Comment = document.getElementById('Comment');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+// let demo = document.getElementById('demo');
+
+document.querySelector("form#taskForm")
   .addEventListener("submit", function (e) {
     // prevent
     e.preventDefault();
-    //  console.log(FirstName.value);
-    //  console.log(LastName.value);
+      
     // //function
-    // validation();
+    validation();
+    // for (var i = 0; i < checkboxes.length; i++) {
+    //   if (checkboxes[i].checked) {
+    //     result += checkboxes[i].value
+    //       + "\n" ;
+    //   }
+    // }
+    // console.log(result);
+ 
     // function call
-    senddata();
+    // senddata();
+    // console.log(checkedValue)
   });
 //function to call
 function senddata() {
   document.querySelector("#showData").innerHTML += `
-       
-        <div>${FirstName.value}</div>
-        <div>${LastName.value}</div>
-        <div>${Email.value}</div>
-        <div>${PhoneNumber.value}</div>
-        <div>${Qualification.value}</div>
-        <div>${Gender.value}</div>
-        <div>${Hobbies}</div>
-        <div>${Comment.value}</div>
+                                                    <div class="result">
+                                                    <!-- first name  -->
+                                                    <div class="d-flex gap-4">
+                                                        <p>FirstName :-</p>
+                                                        <div>${FirstName.value}</div>
+                                                    </div>
+                                                    <!-- last name  -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>LastName :-</p>
+                                                      <div>${LastName.value}</div>
+                                                    </div>
+                                                    <!-- email -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>Email :-</p>
+                                                      <div>${Email.value}</div>
+                                                    </div>
+                                                    <!-- phone  -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>Phone Number :-</p>
+                                                      <div>${PhoneNumber.value}</div>
+                                                    </div>
+                                                    <!-- qualification -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>Qualification :-</p>
+                                                      <div>${Qualification.value}</div>
+                                                    </div>
+                                                    <!-- Gander -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>Gander :-</p>
+                                                      <div>${Gender.value}</div>
+                                                    </div>
+                                                    <!-- Hobbies -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>Hobbies :-</p>
+                                                      <div>${this.result}</div>
+                                                    </div>
+                                                    <!-- comment  -->
+                                                    <div class="d-flex gap-4">
+                                                      <p>Comment :-</p>
+                                                      <div>${Comment.value}</div>
+                                                    </div>
+                                                  </div>
+                                                `;
 
-        `;
   form.reset();
- 
 }
 //function to call
 function validation() {
   let FirstName = document.getElementById("FirstName").value;
+  let LastName = document.getElementById("LastName").value;
+  let Email = document.getElementById('Email').value;
+  let PhoneNumber = document.getElementById('PhoneNumber').value;
+  let Qualification = document.getElementById('Qualification').value;
+  let Comment = document.getElementById('Comment').value;
   let validFirstName = /^[a-zA-Z\s]+$/;
   let validLastName = /^[a-zA-Z\s]+$/;
-  let LastName = document.getElementById("LastName").value;
+  let validEmail =   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let validPhone = /^[0]?[789]\d{9}$/;
   let Error = document.getElementById("error");
 
   // check the  input field
@@ -63,7 +111,9 @@ function validation() {
     Error.style.display = "flex";
     Error.style.justifyContent = "center";
     Error.style.alignItems = "center";
-    Error.style.marginLeft = "75px";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
   }
   // check valid first name
   else if (!validFirstName.test(FirstName)) {
@@ -77,7 +127,9 @@ function validation() {
     Error.style.display = "flex";
     Error.style.justifyContent = "center";
     Error.style.alignItems = "center";
-    Error.style.marginLeft = "75px";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
   }
 
   // check the second input field
@@ -92,7 +144,9 @@ function validation() {
     Error.style.display = "flex";
     Error.style.justifyContent = "center";
     Error.style.alignItems = "center";
-    Error.style.marginLeft = "75px";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
   }
 
   // check valid last name
@@ -107,9 +161,104 @@ function validation() {
     Error.style.display = "flex";
     Error.style.justifyContent = "center";
     Error.style.alignItems = "center";
-    Error.style.marginLeft = "75px";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
   }
-
+  // check email  
+  else if (Email == "") {
+    Error.innerText = "please enter Email Address";
+    Error.style.color = "#CD212A";
+    Error.style.textTransform = "uppercase";
+    Error.style.fontWeight = "400";
+    Error.style.height = "3rem";
+    Error.style.width = "60%";
+    Error.style.border = "2px dotted red";
+    Error.style.display = "flex";
+    Error.style.justifyContent = "center";
+    Error.style.alignItems = "center";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
+  }
+  else if (!validEmail.test(Email)) {
+    Error.innerText = "please enter valid Email Address";
+    Error.style.color = "#CD212A";
+    Error.style.textTransform = "uppercase";
+    Error.style.fontWeight = "400";
+    Error.style.height = "3rem";
+    Error.style.width = "60%";
+    Error.style.border = "2px dotted red";
+    Error.style.display = "flex";
+    Error.style.justifyContent = "center";
+    Error.style.alignItems = "center";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
+  }
+  // check PhoneNumber
+  else if (PhoneNumber == "") {
+    Error.innerText = "please enter phone number";
+    Error.style.color = "#CD212A";
+    Error.style.textTransform = "uppercase";
+    Error.style.fontWeight = "400";
+    Error.style.height = "3rem";
+    Error.style.width = "60%";
+    Error.style.border = "2px dotted red";
+    Error.style.display = "flex";
+    Error.style.justifyContent = "center";
+    Error.style.alignItems = "center";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
+  }
+  else if (!validPhone.test(PhoneNumber)) {
+    Error.innerText = "please enter valid phone number";
+    Error.style.color = "#CD212A";
+    Error.style.textTransform = "uppercase";
+    Error.style.fontWeight = "400";
+    Error.style.height = "3rem";
+    Error.style.width = "60%";
+    Error.style.border = "2px dotted red";
+    Error.style.display = "flex";
+    Error.style.justifyContent = "center";
+    Error.style.alignItems = "center";
+    Error.style.marginLeft = "20%";
+    // page swift
+    window.location.href = '#error';
+  } 
+  // check Qualification
+  else if (Qualification === "Qualification") {
+    Error.innerText = "please choose your Qualification";
+    Error.style.color = "#CD212A";
+    Error.style.textTransform = "uppercase";
+    Error.style.fontWeight = "400";
+    Error.style.height = "3rem";
+    Error.style.width = "60%";
+    Error.style.border = "2px dotted red";
+    Error.style.display = "flex";
+    Error.style.justifyContent = "center";
+    Error.style.alignItems = "center";
+    Error.style.marginLeft = "20%";
+    // page swift
+      window.location.href = '#error';
+  }
+  // check comment 
+  else if (Comment == '') {
+    Error.innerText = "please write comment";
+    Error.style.color = "#CD212A";
+    Error.style.textTransform = "uppercase";
+    Error.style.fontWeight = "400";
+    Error.style.height = "3rem";
+    Error.style.width = "60%";
+    Error.style.border = "2px dotted red";
+    Error.style.display = "flex";
+    Error.style.justifyContent = "center";
+    Error.style.alignItems = "center";
+    Error.style.marginLeft = "20%";
+    // page swift
+      window.location.href = '#error';
+  }
   // all validation clear than run code
   else {
     // function call
@@ -124,7 +273,8 @@ function validation() {
     Error.style.display = "flex";
     Error.style.justifyContent = "center";
     Error.style.alignItems = "center";
-    Error.style.marginLeft = "75px";
+    Error.style.marginLeft = "20%";
+    Error.style.marginTop = "1rem";
   }
 }
 
