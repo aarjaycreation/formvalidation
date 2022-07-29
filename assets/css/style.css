@@ -14,12 +14,6 @@ html {
 	font-size: 100%;
 }
 
-/* *,
-*::before,
-*::after {
-	box-sizing: inherit;
-} */
-
 
 body {
 	font-size: 10px;
@@ -50,6 +44,7 @@ h3 {
 .feild{
     border-bottom: 1px solid var(--gradient-blue);
 }
+.feildcomment,
 .feild label:first-child{
 	margin-bottom: 1rem;
 	font-size: 14px;
@@ -72,6 +67,26 @@ input{
 	font-size: 10px;
 }
 .result{
-	border: 1px solid black;
-	padding: 1rem 10rem 0 10rem;
+	border-bottom: 2px solid var(--gradient-blue);
+	margin-top: 1rem;
+}
+
+.result p{
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+.result div{
+	font-size: 13px;
+	font-weight: 400;
+}
+.submitbutton{
+	height: 3rem;
+	width: 6rem;
+	border-radius: 0.8rem;
+	border: 2px solid var(--gradient-blue);
+	background-color: var(--divider-blue);
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--gradient-blue);
 }
