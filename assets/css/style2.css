@@ -1,0 +1,60 @@
+html{scroll-behavior: smooth;}
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+sup{
+    color: red;
+    font-weight: bold;
+}
+label{
+   font-weight: 600;
+}
+.form-control{
+    border-radius: 0.3rem;
+   background-color: lightgray;
+}
+
+.select-form{
+   
+    font-weight: 600;
+}
+
+
+.massage__box{
+    height: 3.6rem;
+   background-color: #fff;
+}
+.submitbutton{
+    margin-top: 2rem;
+	height: 3rem;
+	width: 6rem;
+	border-radius: 0.8rem;
+	border: 2px solid lightgray;
+	background-color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--gradient-blue);
+}
+
+/* result  */
+.Error{
+    color:#CD212A; 
+    /* font-weight: 400;
+    text-transform: uppercase; */
+}
+.result{
+	border-bottom: 2px solid lightgray;
+	margin-top: 1rem;
+}
+
+.result p{
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+.result div{
+	font-size: 13px;
+	font-weight: 400;
+}
