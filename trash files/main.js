@@ -70,43 +70,43 @@ const validateInputs = () => {
   let validPhone = /^[0]?[789]\d{9}$/;
 // first 
   if(!validFirstName.test(FirstName)) {
-      setError(FirstNameError, 'Enter Valid First Name');
+      setError(FirstNameError, '*Enter Valid First Name');
   } else {
       setSuccess(FirstNameError);
   }
   // last 
   if(!validLastName.test(LastName)) {
-    setError(LastNameError, 'Enter Valid Last Name');
+    setError(LastNameError, '*Enter Valid Last Name');
   } else {
       setSuccess(LastNameError);
   }
 // email
   if(!validEmail.test(Email)) {
-    setError(EmailError, 'Enter Valid Email Address');
+    setError(EmailError, '*Enter Valid Email Address');
   } else {
       setSuccess(EmailError);
   }
   // phone 
   if(!validPhone.test(PhoneNumber)) {
-    setError(PhoneNumberError, 'Enter Valid Mobile Number');
+    setError(PhoneNumberError, '*Enter Valid Mobile Number');
   } else {
       setSuccess(PhoneNumberError);
   }
   // hobbies
   if(checkboxes == null) {
-    setError(HobbyError, 'Enter Choose Your Hobbies');
+    setError(HobbyError, '*Enter Choose Your Hobbies');
   } else {
       setSuccess(HobbyError);
   }
   // check Qualification 
   if(Qualification === "Qualification*") {
-    setError(QualificationError, 'please choose your Qualification');
+    setError(QualificationError, '*Please Choose Your Qualification');
   } else {
       setSuccess(QualificationError);
   }
   // check comment 
   if(Comment == '') {
-    setError(CommentError, 'please Write Your Comment');
+    setError(CommentError, '*Please Write Your Comment');
   } else {
       setSuccess(CommentError);
   }

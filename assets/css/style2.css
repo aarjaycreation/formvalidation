@@ -1,60 +1,115 @@
-html{scroll-behavior: smooth;}
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
-*{
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-}
-sup{
-    color: red;
-    font-weight: bold;
-}
-label{
-   font-weight: 600;
-}
-.form-control{
-    border-radius: 0.3rem;
-   background-color: lightgray;
+/*===== VARIABLES CSS =====*/
+:root {
+  --text-blue: hsl(238, 29%, 16%);
+  --text-dkblue: hsl(240, 6%, 50%);
+  --text-xdkblue: hsl(237, 12%, 33%);
+  --text-red: hsl(14, 88%, 65%);
+  --gradient-violet: hsl(273, 75%, 66%);
+  --gradient-blue: hsl(240, 73%, 65%);
+  --divider-blue: hsl(240, 5%, 91%);
 }
 
-.select-form{
-   
-    font-weight: 600;
+@media screen and (min-width: 768px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem 1rem;
+  font-family: "Kumbh Sans", sans-serif;
+
+  color: var(--text-blue);
+}
+html {
+  scroll-behavior: smooth;
+  box-sizing: initial;
+  /* font-size: 100%; */
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--first-color-dark);
 }
 
-
-.massage__box{
-    height: 3.6rem;
-   background-color: #fff;
+.card {
+  background-color: var(--divider-blue);
+  border-radius: 1.5rem;
 }
-.submitbutton{
-    margin-top: 2rem;
-	height: 3rem;
-	width: 6rem;
-	border-radius: 0.8rem;
-	border: 2px solid lightgray;
-	background-color: #fff;
-	font-size: 14px;
-	font-weight: 700;
-	color: var(--gradient-blue);
+.ganderlable {
+  height: 2.37rem;
+  background-color: var(--divider-blue);
+}
+.dropdown-menu {
+  padding: 0.5rem;
+  width: 27.9%;
+  height: auto;
+  background-color: var(--divider-blue);
+}
+sup {
+  color: red;
+  font-weight: bold;
+}
+label {
+  font-weight: 600;
+}
+.secondlable {
+  font-weight: 400;
+  font-size: 14px;
+  color: #74757d;
+}
+input::placeholder {
+  color: #74757d;
+  font-size: 14px;
+  font-weight: 400;
+}
+.form-control {
+  border-radius: 0%;
+  background-color: var(--divider-blue);
+}
+
+.select-form {
+  border-radius: 0%;
+  background-color: var(--divider-blue);
+}
+
+.massage__box {
+  height: 7.24rem;
+  background-color: var(--divider-blue);
+}
+.submitbutton {
+  margin-top: 2rem;
+  height: 3rem;
+  width: 6rem;
+  border-radius: 0.8rem;
+  border: 2px solid lightgray;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gradient-blue);
 }
 
 /* result  */
-.Error{
-    color:#CD212A; 
-    /* font-weight: 400;
+.Error {
+  color: #cd212a;
+  /* font-weight: 400;
     text-transform: uppercase; */
 }
-.result{
-	border-bottom: 2px solid lightgray;
-	margin-top: 1rem;
+.result {
+  margin-top: 0.5rem;
 }
 
-.result p{
-	font-size: 13px;
-	font-weight: 400;
-	letter-spacing: 2px;
+.result p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
-.result div{
-	font-size: 13px;
-	font-weight: 400;
+.result div {
+  font-size: 13px;
+  font-weight: 400;
 }

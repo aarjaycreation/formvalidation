@@ -19,9 +19,10 @@ let FirstNameError = document.getElementById("FirstNameError");
 let Error = document.getElementById("error");
 
 // validate regex
-let validFirstName = /^[a-zA-Z\s]+$/;
-let validLastName = /^[a-zA-Z\s]+$/;
-let validEmail =/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+let validFirstName = /^[a-zA-Z]{2,20}$/;
+let validLastName = /^[a-zA-Z]{2,20}$/;
+let validEmail =
+  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let validPhone = /^[0]?[789]\d{9}$/;
 
 // whan click the submit button
@@ -46,64 +47,65 @@ validation = () => {
   removeErrors();
   // first name
   if (FirstName.value == "") {
-    FirstNameError.innerText = "*Please Enter First Name";
-    location.href = '#FirstName'
+    FirstNameError.innerText = "Please Enter First Name";
+    location.href = "#FirstName";
   }
-
+  // else if (FirstName.value.replace(/\s/g, '').length <= 0) {
+  //   FirstNameError.innerText = "Please Don't Use Space";
+  //   location.href = '#FirstName';
+  // }
   // check valid first name
   else if (!validFirstName.test(FirstName.value)) {
     FirstNameError.innerText = "Please Enter Valid First Name";
-    location.href = '#FirstName'
+    location.href = "#FirstName";
   }
 
   // last name
   else if (LastName.value == "") {
     LastNameError.innerText = "Please Enter Last Name";
-    location.href = '#LastName'
+    location.href = "#LastName";
   }
 
   // check valid last name
   else if (!validLastName.test(LastName.value)) {
     LastNameError.innerText = "Please Enter Valid Last Name";
-    location.href = '#LastName'
+    location.href = "#LastName";
   }
 
   // check email
   else if (Email.value == "") {
     EmailError.innerText = "Please Enter Email Address";
-    location.href = '#Email'
-  } 
-  else if (!validEmail.test(Email.value)) {
+    location.href = "#Email";
+  } else if (!validEmail.test(Email.value)) {
     EmailError.innerText = "Please Enter Valid Email Address";
-    location.href = '#Email'
+    location.href = "#Email";
   }
 
   // check PhoneNumber
   else if (PhoneNumber.value == "") {
     PhoneNumberError.innerText = "Please Enter Phone Number";
-    location.href = '#PhoneNumber'
-  } 
-  else if (!validPhone.test(PhoneNumber.value)) {
+    location.href = "#PhoneNumber";
+  } else if (!validPhone.test(PhoneNumber.value)) {
     PhoneNumberError.innerText = "Please Enter Valid Phone Number";
-    location.href = '#PhoneNumber'
+    location.href = "#PhoneNumber";
   }
 
   // check hobbies
   else if (checkHobbies == null) {
     HobbyError.innerText = "Please Choose Hobbies";
-    location.href = '#hobbies'
+    location.href = "#hobbies";
   }
 
   // check Qualification  !this.form.checkbox.checked
-  else if (Qualification.value === "Qualification*") {
+  else if (Qualification.value === "Qualification") {
     QualificationError.innerText = "Please Choose Your Qualification";
-    location.href = '#Qualification'
+    location.href = "#Qualification";
   }
 
   // check comment
   else if (Comment.value == "") {
     CommentError.innerText = "Please Write Your Comment";
-    location.href = '#Comment'
+    location.href = "#Comment";
   }
 
   // all validation clear than run code
@@ -117,15 +119,15 @@ sendData = () => {
   let chk = [];
 
   //  for print checkbox values
-  for(let key in checkboxes){
+  for (let key in checkboxes) {
     if (checkboxes[key].checked == true) {
       chk.push(checkboxes[key].value);
     }
   }
-  
 
   document.querySelector("#showData").innerHTML += `
-  <div class="result">
+  <section class="card my-3">
+  <div class="result p-3">
   <h4>Result</h4>
   <!-- first name  -->
   <div class="d-flex gap-4">
@@ -168,6 +170,7 @@ sendData = () => {
     <div>${Comment.value}</div>
   </div>
 </div> 
+</section>
 `;
   form.reset();
 };
