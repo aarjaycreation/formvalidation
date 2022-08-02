@@ -1,4 +1,4 @@
-/*===== GOOGLE FONTS =====*/
+/*fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
@@ -239,7 +239,7 @@ img {
   box-shadow: 0px 15px 36px rgba(0, 0, 0, 0.15);
 }
 
-/*===== MEDIA QUERIS =====*/
+/*media query*/
 @media screen and (min-width: 968px) {
   .shape1 {
     width: 400px;
